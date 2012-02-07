@@ -60,11 +60,11 @@
   \* _____________ *\
   \* B: (index K); *\
 
-  if (and (positive? N1) (positive? N2))
+  \* if (and (positive? N1) (positive? N2)) *\
   \* N1: positive; *\
   \* N2: positive; *\
-  _____________
-  (> N1 (- N1 N2)): true;
+  \* _____________ *\
+  \* (> N1 (- N1 N2)): true; *\
 )
 
 \* (define f *\
@@ -76,18 +76,23 @@
   N -> N)
 
 (datatype safevec
-  N : (index N);
+  \* K: (index K); *\
+  \* V: (vector A); *\
+  \* ========================= *\
+  \* V: (safevec A K); *\
+
+  K: (index K);
   =========================
-  (vector N) : (safevec N);
+  (vector K): (safevec A K);
 )
 
 (define safevec-init
- {(index N) --> (safevec N)}
+ {(index N) --> (safevec A N)}
  N -> (vector N))
 
 \* --------------------------------------------------------------------------------*\
 (define safevec-ref
-  {(safevec K) --> (index K) --> A}
+  {(safevec A K) --> (index K) --> A}
   V L -> (<-vector V L))
 
 \*---------------------------------------------------------------------------------*\
