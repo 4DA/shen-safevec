@@ -79,5 +79,6 @@
   Vec I Val -> (vector-> Vec I Val))
 
 \* Test with this: *\
-\* (safevec-ref (safevec-set (safevec-init 10) 3 3) 3) *\
+\* (safevec-ref (safevec-set (safevec-init 10) 3 3) 3) - OK*\
+\* (safevec-ref (safevec-set (safevec-init 10) 3 3) 12) - type error*\
 
